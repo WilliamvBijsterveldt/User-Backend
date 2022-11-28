@@ -16,5 +16,5 @@ on:
 
 jobs:
   compliance:
-    uses: WilliamvBijsterveldt/Planning-Backend/.github/workflows/maven.yml@main
+    uses: WilliamvBijsterveldt/Planning-Backend/.github/workflows/maven.yml@master
  
