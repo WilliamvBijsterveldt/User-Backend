@@ -17,5 +17,7 @@ on:
 jobs:
   compliance:
     uses: WilliamvBijsterveldt/Planning-Backend/.github/workflows/maven.yml@master
-    secrets:
-      image: ${{ secrets.DOCKER_IMAGE }}
+    on:
+      workflow_call:
+        secrets:
+          image: ${{ secrets.DOCKER_IMAGE }}
