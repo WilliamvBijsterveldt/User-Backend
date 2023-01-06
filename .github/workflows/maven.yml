@@ -17,5 +17,4 @@ on:
 jobs:
   compliance:
     uses: WilliamvBijsterveldt/Planning-Backend/.github/workflows/maven.yml@master
-    workflow_call:
-      secrets: inherit
+    secrets: inherit
