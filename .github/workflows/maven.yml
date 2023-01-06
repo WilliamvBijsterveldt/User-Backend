@@ -17,5 +17,3 @@ on:
 jobs:
   compliance:
     uses: WilliamvBijsterveldt/Planning-Backend/.github/workflows/maven.yml@master
-    with:
-      dockerfile: Dockerfile
