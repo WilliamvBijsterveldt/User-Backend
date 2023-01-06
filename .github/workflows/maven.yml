@@ -17,3 +17,8 @@ on:
 jobs:
   compliance:
     uses: WilliamvBijsterveldt/Planning-Backend/.github/workflows/maven.yml@master
+    with:
+      dockerfile: Dockerfile
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}
+      image: ${{ secrets.DOCKER_IMAGE }}

@@ -58,6 +58,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>springboot-image-user-backend</finalName>
     </build>
 
 </project>
