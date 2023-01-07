@@ -4,6 +4,7 @@ import com.example.userbackend.exception.ResourceNotFoundException;
 import com.example.userbackend.model.User;
 import com.example.userbackend.repository.UserRepository;
 import com.example.userbackend.service.UserService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,13 +13,17 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public User registerUser(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         return userRepository.save(user);
     }
 
@@ -55,7 +60,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User userLogin(String email, String password) {
+    public User loginUser(String username, String password) {
         return null;
     }
 }
